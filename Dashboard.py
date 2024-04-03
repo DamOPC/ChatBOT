@@ -51,4 +51,3 @@ if st.button ("Submit"):
             st.write(answer)
     else:
         st.warning("Please enter a prompt")
-view rawcreating_simple_chatbot_using_pandasai_openai_streamlit.py hosted with ❤ by GitHub
