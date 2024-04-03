@@ -31,7 +31,7 @@ st.markdown('---') # to make line
 upload_xlsx_file = st.file_uploader("Upload Your XLSX file for data analysis and visualization", type = ["xlsx"])
 # if statement to make sure the data is uploaded
 if upload_xlsx_file is not None:
-    data = pd.read_xlsx(upload_xlsx_file)
+    data = pd.read_excel(upload_xlsx_file)
     data.columns = data.columns.str.upper()   #convert the columns to uppercase 
     st.dataframe(data.head(5))
     st.write(' Data Uploaded Successfully!')
