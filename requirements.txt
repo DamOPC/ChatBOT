@@ -4,3 +4,5 @@ matplotlib
 pandasai
 pyyaml
 openpyxl
+
+black # this is a very famous code formatter
