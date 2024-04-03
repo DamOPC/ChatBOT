@@ -39,7 +39,8 @@ st.markdown('---')
 st.write ( '### Enter Your Analysis or Visualization Request')
 query = st.text_area(" Enter your prompt")
 
-llm = OpenAI(api_token= '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')  ### API key starts with something sk-...
+
+llm = OpenAI(api_token= st.secrets["chatgpt_token"])  ### API key starts with something sk-...
 if st.button ("Submit"):
     if query:
         with st.spinner("Loading wait.."):
