@@ -28,10 +28,10 @@ st.title ("  ChatBot : Prompt Based Data Analysis and Visualization ")
 st.markdown('---') # to make line 
 
 # file uploader using streamlit 
-upload_csv_file = st.file_uploader("Upload Your CSV file for data analysis and visualization", type = ["csv"])
+upload_xlsx_file = st.file_uploader("Upload Your XLSX file for data analysis and visualization", type = ["xlsx"])
 # if statement to make sure the data is uploaded
-if upload_csv_file is not None:
-    data = pd.read_csv(upload_csv_file)
+if upload_xlsx_file is not None:
+    data = pd.read_xlsx(upload_xlsx_file)
     data.columns = data.columns.str.upper()   #convert the columns to uppercase 
     st.dataframe(data.head(5))
     st.write(' Data Uploaded Successfully!')
