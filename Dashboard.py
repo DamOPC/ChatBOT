@@ -24,11 +24,11 @@ class StreamlitOuput(ResponseParser):
 # make the app wider
 st.set_page_config(layout='wide')
 # set the title
-st.title ("  ChatBot : Prompt Based Data Analysis and Visualization ")
+st.title ("  ChatBot : Jarvis ")
 st.markdown('---') # to make line 
 
 # file uploader using streamlit 
-upload_xlsx_file = st.file_uploader("Upload Your XLSX file for data analysis and visualization", type = ["xlsx"])
+upload_xlsx_file = st.file_uploader("Uploader votre fichier XLSX pour l'analyser ou visualiser des données", type = ["xlsx"])
 # if statement to make sure the data is uploaded
 if upload_xlsx_file is not None:
     data = pd.read_excel(upload_xlsx_file)
@@ -36,8 +36,8 @@ if upload_xlsx_file is not None:
     st.dataframe(data.head(5))
     st.write(' Data Uploaded Successfully!')
 st.markdown('---')
-st.write ( '### Enter Your Analysis or Visualization Request')
-query = st.text_area(" Enter your prompt")
+st.write ( '### Renseigner votre demande d analyse ou de visualisation')
+query = st.text_area(" Entrer votre prompt")
 
 
 llm = OpenAI(api_token= st.secrets["chatgpt_token"])  ### API key starts with something sk-...
