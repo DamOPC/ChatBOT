@@ -36,7 +36,7 @@ if upload_xlsx_file is not None:
     st.dataframe(data.head(5))
     st.write(' Data Uploaded Successfully!')
 st.markdown('---')
-st.write ( '### Renseigner votre demande d analyse ou de visualisation')
+st.write ( "### Renseigner votre demande d'analyse ou de visualisation")
 query = st.text_area(" Entrer votre prompt")
 
 
