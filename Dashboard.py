@@ -34,14 +34,14 @@ if upload_xlsx_file is not None:
     data = pd.read_excel(upload_xlsx_file)
     data.columns = data.columns.str.upper()   #convert the columns to uppercase 
     st.dataframe(data.head(5))
-    st.write(' Data Uploaded Successfully!')
+    st.write("Données uploadées avec succès")
 st.markdown('---')
 st.write ( "### Renseigner votre demande d'analyse ou de visualisation")
 query = st.text_area(" Entrer votre prompt")
 
 
 llm = OpenAI(api_token= st.secrets["chatgpt_token"])  ### API key starts with something sk-...
-if st.button ("Submit"):
+if st.button ("Envoyer"):
     if query:
         with st.spinner("Loading wait.."):
             st.write ( '### OUTPUT : ')
@@ -51,4 +51,4 @@ if st.button ("Submit"):
             answer = query_engine.chat(query)
             st.write(answer)
     else:
-        st.warning("Please enter a prompt")
+        st.warning("Entrer votre prompt")
